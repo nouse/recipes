@@ -1,0 +1,5 @@
+h3 Recipe List
+ul.recipes
+  li ng-repeat="recipe in ::recipes"
+    div
+      a href="/view/{{recipe.id}}" {{recipe.title}}

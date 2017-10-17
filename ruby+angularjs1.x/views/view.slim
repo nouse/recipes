@@ -1,0 +1,22 @@
+h2
+  | {{::recipe.title}}
+div
+  | {{::recipe.description }}
+
+h3 Ingredients
+ul
+  li ng-repeat="ingredient in recipe.ingredients"
+    span
+      | {{::ingredient.amount}}
+    span
+      | {{::ingredient.units}}
+    span
+      | {{::ingredient.name}}
+
+h3 Instructions
+div
+  | {{::recipe.instructions}}
+
+form.form-horizontal ng-submit="edit()"
+  .control-group
+    button.btn.btn-primary Edit

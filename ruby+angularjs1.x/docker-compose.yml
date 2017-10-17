@@ -1,0 +1,20 @@
+---
+version: '2'
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./config.ru:/myapp/config.ru
+      - ./app.rb:/myapp/app.rb
+      - ./public:/myapp/public
+      - ./migrations:/myapp/migrations
+      - ./views:/myapp/views
+    environment:
+      DATABASE_URL: "postgres://postgres@db/recipes"
+    ports:
+      - "9292:9292"
+  db:
+    image: "postgres:9.6-alpine"
+    environment:
+      POSTGRES_DB: recipes
