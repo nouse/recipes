@@ -38,7 +38,7 @@ class App < Roda
       r.is Integer do |id|
         recipe = Recipe[id: id]
         unless recipe
-          halt(404)
+          r.halt(404)
         end
         r.get do
           recipe.values
