@@ -23,5 +23,5 @@ RUN set -ex \
 	&& apk add --virtual .ruby-rundeps $runDeps \
 	&& apk del .ruby-builddeps
 
-CMD ["rackup", "-o", "0.0.0.0"]
+CMD ["puma", "-e", "production", "-p", "9292"]
 EXPOSE 9292

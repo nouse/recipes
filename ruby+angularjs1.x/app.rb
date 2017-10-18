@@ -12,9 +12,8 @@ class App < Roda
   plugin :all_verbs
   plugin :halt
   plugin :csrf, :header => "X-XSRF-TOKEN"
-  plugin :static_path_info
   plugin :cookies
-  use Rack::Protection
+  use Rack::Protection, origin_whitelist: ["http://localhost:9292", "http://127.0.0.1:9292"], without_session: true
 
   route do |r|
     unless request.cookies['XSRF-TOKEN']
@@ -45,7 +44,7 @@ class App < Roda
         end
       end
 
-      r.is ":id" do |id|
+      r.is Integer do |id|
         recipe = Recipe[id: id]
         unless recipe
           halt(404)
@@ -65,11 +64,11 @@ class App < Roda
       end
     end
 
-    r.get "view/:id" do |id|
+    r.get "view", Integer do |id|
       view "index"
     end
 
-    r.get "edit/:id" do |id|
+    r.get "edit", Integer do |id|
       view "index"
     end
 
