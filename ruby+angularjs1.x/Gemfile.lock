@@ -15,11 +15,6 @@ GEM
     sequel_pg (1.7.1)
       pg (>= 0.8.0)
       sequel (>= 4.0.0)
-    slim (3.0.8)
-      temple (>= 0.7.6, < 0.9)
-      tilt (>= 1.3.3, < 2.1)
-    temple (0.8.0)
-    tilt (2.0.8)
 
 PLATFORMS
   ruby
@@ -32,7 +27,6 @@ DEPENDENCIES
   roda
   sequel
   sequel_pg
-  slim
 
 BUNDLED WITH
    1.15.4

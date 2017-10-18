@@ -7,7 +7,6 @@ end
 
 class App < Roda
   use Rack::Session::Cookie, :secret => "28165294156053dfe44aa83a54004a1edccc3a5baa3bbb23e3a8aaef54004a30"
-  plugin :render, engine: "slim"
   plugin :json
   plugin :all_verbs
   plugin :halt
@@ -18,14 +17,6 @@ class App < Roda
   route do |r|
     unless request.cookies['XSRF-TOKEN']
       response.set_cookie "XSRF-TOKEN", csrf_token
-    end
-
-    r.root do
-      view "index"
-    end
-
-    r.get "new" do
-      view "index"
     end
 
     r.on "recipes" do
@@ -61,28 +52,6 @@ class App < Roda
         r.delete do
           recipe.destroy.values
         end
-      end
-    end
-
-    r.get "view", Integer do |id|
-      view "index"
-    end
-
-    r.get "edit", Integer do |id|
-      view "index"
-    end
-
-    r.on "views" do
-      r.get "recipeForm.html" do
-        render "recipeForm"
-      end
-
-      r.get "list.html" do
-        render "list"
-      end
-
-      r.get "viewRecipe.html" do
-        render "view"
       end
     end
 

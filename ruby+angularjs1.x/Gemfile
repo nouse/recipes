@@ -7,4 +7,3 @@ gem "refrigerator", require: false
 gem "roda"
 gem "sequel"
 gem "sequel_pg", require: false
-gem "slim"
