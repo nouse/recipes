@@ -6,7 +6,7 @@ class Recipe < Sequel::Model
 end
 
 class App < Roda
-  use Rack::Session::Cookie, :secret => "28165294156053dfe44aa83a54004a1edccc3a5baa3bbb23e3a8aaef54004a30"
+  use Rack::Session::Cookie, :secret => "insecure"
   plugin :json
   plugin :all_verbs
   plugin :halt
