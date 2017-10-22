@@ -1,0 +1,42 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/go-chi/chi",
+			"repository": "https://github.com/go-chi/chi",
+			"revision": "e0ba5d4039fb63e170f45708841a5a2535489413",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/go-chi/render",
+			"repository": "https://github.com/go-chi/render",
+			"revision": "9f855fadd4b8cde7773f9ef51f6b2705af239519",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/kisielk/sqlstruct",
+			"repository": "https://github.com/kisielk/sqlstruct",
+			"revision": "648daed35d49dac24a4bff253b190a80da3ab6a5",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/lib/pq",
+			"repository": "https://github.com/lib/pq",
+			"revision": "456514e2defec52e0cd37f90ccf17ec8b28295e2",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/lib/pq/oid",
+			"repository": "https://github.com/lib/pq",
+			"revision": "456514e2defec52e0cd37f90ccf17ec8b28295e2",
+			"branch": "master",
+			"path": "/oid"
+		},
+		{
+			"importpath": "gopkg.in/doug-martin/goqu.v4",
+			"repository": "https://gopkg.in/doug-martin/goqu.v4",
+			"revision": "fcccf41c26d20796d831aafe71d121a97f2bb6fb",
+			"branch": "master"
+		}
+	]
+}

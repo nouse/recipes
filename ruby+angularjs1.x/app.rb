@@ -21,10 +21,12 @@ class App < Roda
 
     r.on "recipes" do
       r.is do
+        # GET /recipes
         r.get do
           Recipe.select(:id, :title).map(&:values)
         end
 
+        # POST /recipes
         r.post do
           if recipe = Recipe.create(JSON.load(request.body))
             recipe.values
@@ -40,15 +42,19 @@ class App < Roda
         unless recipe
           r.halt(404)
         end
+
+        # GET /recipes/:id
         r.get do
           recipe.values
         end
 
+        # PUT /recipes/:id
         r.put do
           recipe.update_fields(JSON.load(request.body), %w[title description instructions ingredients])
           recipe.values
         end
 
+        # DELETE /recipes/:id
         r.delete do
           recipe.destroy.values
         end

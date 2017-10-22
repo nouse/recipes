@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="guthub">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+  <title>GutHub - Create and Share</title>
+  <script src="/js/vendor/angular.min.js"></script>
+  <script src="/js/vendor/lodash.min.js"></script>
+  <script src="/js/vendor/restangular.min.js"></script>
+  <script src="/js/vendor/angular-route.min.js"></script>
+  <script src="/js/vendor/angular-touch.min.js"></script>
+  <script src="/js/services.js"></script>
+  <script src="/js/directives.js"></script>
+  <script src="/js/controllers.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <style type="text/css">
+  .hide: { display: none; }
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top navbar-inverse" role=
+  "navigation">
+    <div class="container" ng-controller="navbarCtrl">
+      <div class="navbar-header">
+          <button class="navbar-toggle" ng-click="toggle=!toggle" type="button">
+              <a class="navbar-brand" href="/">GubHub</a>
+          </button>
+      </div>
+      <div class="navbar-collapse collapse" ng-class="{in:toggle}">
+        <ul class="navbar-nav nav">
+          <li>
+            <a href="/new">New Recipe</a>
+          </li>
+          <li class="active">
+            <a href="/">Recipe List</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 50px">
+    <div butterbar="">
+      Loading...
+    </div>
+    <div ng-view=""></div>
+  </div>
+</body>
+</html>

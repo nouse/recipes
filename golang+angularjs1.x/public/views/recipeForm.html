@@ -1,0 +1,35 @@
+<h2>Edit Recipe
+</h2>
+<form class="form-horizontal" name="recipeForm" ng-submit="save()">
+<div class="form-group">
+<label class="col-sm-2 control-label" for="title">Title:</label>
+<div class="col-sm-4">
+<input class="form-control" focus="" id="title" ng-model="recipe.title" required="" />
+</div></div><div class="form-group">
+<label class="col-sm-2 control-label" for="description">Description:</label>
+<div class="col-sm-4">
+<textarea class="form-control" id="description" ng-model="recipe.description">
+</textarea></div></div><div class="form-group" ng-controller="IngredientsCtrl">
+<label class="col-sm-2 control-label" for="ingredients">Ingredients:</label>
+<div class="col-sm-4">
+<ul class="list-group" id="ingredients">
+<li class="list-group-item" ng-repeat="ingredient in recipe.ingredients">
+<input ng-model="::ingredient.amount" placeholder="amount" style="width:50px;border:none;border-bottom:1px solid #ccc;margin-right:10px" />
+<input ng-model="::ingredient.units" placeholder="units" style="width:50px;border:none;border-bottom:1px solid #ccc;margin-right:10px" />
+<input ng-model="::ingredient.name" placeholder="name" style="width:50px;border:none;border-bottom:1px solid #ccc;margin-right:10px" />
+<button class="btn btn-xs btn-default" ng-click="removeIngredient($index)" type="button">
+<span class="glyphicon glyphicon-minus-sign">
+</span>Delete
+</button></li></ul><button class="btn btn-xs btn-default" ng-click="addIngredient()" type="button">
+<span class="glyphicon glyphicon-plus-sign">
+</span>Add
+
+</button></div></div><div class="form-group">
+<label class="col-sm-2 control-label" for="instructions">Instructions</label>
+<div class="col-sm-4">
+<textarea class="form-control" id="instructions" ng-model="recipe.instructions" rows="10">
+
+</textarea></div></div><div class="col-sm-offset-2 col-sm-4">
+<button class="btn btn-primary">Save</button>
+<button class="btn btn-default" ng-click="remove()" ng-show="recipe.id" type="button">Delete</button>
+</div></form>

@@ -1,0 +1,1 @@
+CREATE TABLE "recipes" ("id" serial PRIMARY KEY, "title" text UNIQUE, "description" text, "instructions" text, "ingredients" jsonb)
