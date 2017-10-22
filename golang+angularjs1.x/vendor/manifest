@@ -2,6 +2,12 @@
 	"version": 0,
 	"dependencies": [
 		{
+			"importpath": "github.com/DATA-DOG/go-txdb",
+			"repository": "https://github.com/DATA-DOG/go-txdb",
+			"revision": "c3389523873340a9bdbbb51442197f86a176ad94",
+			"branch": "master"
+		},
+		{
 			"importpath": "github.com/go-chi/chi",
 			"repository": "https://github.com/go-chi/chi",
 			"revision": "e0ba5d4039fb63e170f45708841a5a2535489413",

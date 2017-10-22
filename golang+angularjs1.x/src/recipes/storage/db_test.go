@@ -4,10 +4,15 @@ import (
 	"testing"
 	"os"
 	"log"
+	"github.com/DATA-DOG/go-txdb"
+	"database/sql"
 )
 
 func TestMain(s *testing.M) {
-	err := Connect(os.Getenv("DATABASE_URL"))
+	txdb.Register("txdb", "postgres", os.Getenv("DATABASE_URL"))
+	var err error
+	pgDB, err = sql.Open("txdb", "identifier")
+	defer pgDB.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
