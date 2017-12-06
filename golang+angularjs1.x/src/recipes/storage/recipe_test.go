@@ -10,7 +10,10 @@ import (
 )
 
 func TestCreateRecipe(t *testing.T) {
-
+	err := openTestDB()
+	if err != nil {
+		t.Fatal(err)
+	}
 	rand.Seed(time.Now().UnixNano())
 	recipe := models.Recipe{
 		ID: 1,
@@ -28,7 +31,10 @@ func TestCreateRecipe(t *testing.T) {
 }
 
 func TestGetRecipe(t *testing.T) {
-
+	err := openTestDB()
+	if err != nil {
+		t.Fatal(err)
+	}
 	rand.Seed(time.Now().UnixNano())
 	recipe := models.Recipe{
 		ID: 1,
